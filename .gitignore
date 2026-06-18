@@ -1,0 +1,24 @@
+# Node
+node_modules/
+
+# Environment files
+.env
+.env.*
+
+# Firebase keys
+serviceAccountKey.json
+firebase-adminsdk.json
+
+# Python
+__pycache__/
+*.pyc
+
+# ML models
+*.pkl
+
+# Build folders
+dist/
+build/
+
+# Logs
+*.log
