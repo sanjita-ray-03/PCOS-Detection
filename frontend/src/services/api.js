@@ -2,16 +2,12 @@ import axios from "axios";
 
 
 export const mlApi = axios.create({
-  baseURL: "http://localhost:5000"
+  baseURL: "https://pcos-ml-api-nsbg.onrender.com/"
 });
 
 
-const api =
-axios.create({
-
- baseURL:
- "http://localhost:5001/api"
-
+const api = axios.create({
+ baseURL: "https://pcos-backend-y5y6.onrender.com/api"
 });
 
 api.interceptors.request.use(
