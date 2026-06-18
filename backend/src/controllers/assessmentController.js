@@ -4,63 +4,59 @@ require("../config/firebase");
 const axios =
 require("axios");
 
-exports.predictPCOS =
-async (req,res)=>{
 
- try{
 
-  const mlResponse =
-  await axios.post(
+exports.predictPCOS = async (req, res) => {
+  try {
+    console.log("REQ BODY:", req.body);
+    console.log("USER:", req.user);
 
-   "http://localhost:5000/predict",
+    const mlResponse = await axios.post(process.env.ML_API, req.body);
 
-   req.body
+    console.log("ML RESPONSE:", mlResponse.data);
 
-  );
+    const prediction = mlResponse.data;
 
-  const prediction =
-  mlResponse.data;
+    if (!req.user?.id) {
+      throw new Error("User ID missing (auth issue)");
+    }
 
-  await db
-   .collection("users")
-   .doc(req.user.id)
-   .collection("assessments")
-   .add({
+    if (!prediction) {
+      throw new Error("ML response missing");
+    }
 
-    ...req.body,
+    await db
+      .collection("users")
+      .doc(req.user.id)
+      .collection("assessments")
+      .add({
+        ...req.body,
+        prediction: prediction.prediction,
+        probability: prediction.probability,
+        riskLevel: prediction.riskLevel,
+        createdAt: new Date()
+      });
 
-    prediction:
-    prediction.prediction,
+    res.status(200).json(prediction);
 
-    probability:
-    prediction.probability,
+  } catch (error) {
+    console.log("🔥 FULL ERROR MESSAGE:");
+    console.log(error.message);
 
-    riskLevel:
-    prediction.riskLevel,
+    console.log("🔥 ML ERROR RESPONSE:");
+    console.log(error.response?.data);
 
-    createdAt:
-    new Date()
+    console.log("🔥 STACK:");
+    console.log(error.stack);
 
-   });
-
-  res.status(200).json(
-   prediction
-  );
-
- }
- catch(error){
-
-  console.log(error);
-
-  res.status(500).json({
-
-   message:error.message
-
-  });
-
- }
-
+    res.status(500).json({
+      message: error.message,
+      mlError: error.response?.data
+    });
+  }
 };
+
+
 
 
 exports.getHistory =
