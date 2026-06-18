@@ -1,0 +1,4 @@
+2026-06-11 00:40:32,582 - pyswarms.discrete.binary - INFO - Optimize for 30 iters with {'c1': 1.5, 'c2': 1.5, 'w': 0.7, 'k': 10, 'p': 2}
+2026-06-11 00:41:01,167 - pyswarms.discrete.binary - INFO - Optimization finished | best cost: 0.1923611111111112, best pos: [1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 0 0 1]
+2026-06-11 20:11:42,322 - pyswarms.discrete.binary - INFO - Optimize for 30 iters with {'c1': 1.5, 'c2': 1.5, 'w': 0.7, 'k': 10, 'p': 2}
+2026-06-11 20:12:11,164 - pyswarms.discrete.binary - INFO - Optimization finished | best cost: 0.1958333333333332, best pos: [0 1 1 1 0 1 1 1 1 1 1 0 1 1 0 0 0 1 1 0 1]

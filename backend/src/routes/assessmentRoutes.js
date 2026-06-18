@@ -1,0 +1,21 @@
+const express = require("express");
+
+const router = express.Router();
+
+const authMiddleware = require("../middleware/authMiddleware");
+
+const { predictPCOS, getHistory } = require("../controllers/assessmentController");
+
+router.post(
+ "/predict",
+ authMiddleware,
+ predictPCOS
+);
+
+router.get(
+ "/history",
+ authMiddleware,
+ getHistory
+);
+
+module.exports = router;
