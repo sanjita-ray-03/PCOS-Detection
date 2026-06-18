@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import Results from "./pages/Results";
 import History from "./pages/History";
 import Profile from "./pages/Profile";
-import EditProfile from "./pages/EditProfile";
+import EditProfile from "./pages/editProfile";
 import Assessment from "./pages/Assessment";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
