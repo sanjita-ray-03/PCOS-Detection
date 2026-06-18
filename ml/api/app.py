@@ -8,9 +8,25 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
-model = joblib.load("../models/model.pkl")
-scaler = joblib.load("../models/scaler.pkl")
-features = joblib.load("../models/features.pkl")
+# model = joblib.load("../models/model.pkl")
+# scaler = joblib.load("../models/scaler.pkl")
+# features = joblib.load("../models/features.pkl")
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(
+    os.path.join(BASE_DIR, "..", "models", "model.pkl")
+)
+
+scaler = joblib.load(
+    os.path.join(BASE_DIR, "..", "models", "scaler.pkl")
+)
+
+features = joblib.load(
+    os.path.join(BASE_DIR, "..", "models", "features.pkl")
+)
 
 # convert ALL feature names to normal Python strings
 features = [str(f) for f in features]
