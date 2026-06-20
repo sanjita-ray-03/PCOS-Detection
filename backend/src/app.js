@@ -15,13 +15,11 @@ require("morgan");
 const compression =
 require("compression");
 
-const errorMiddleware =
-require(
+const errorMiddleware = require(
  "./middleware/errorMiddleware"
 );
 
-const userRoutes =
-require(
+const userRoutes = require(
  "./routes/userRoutes"
 );
 
@@ -45,15 +43,10 @@ app.use(
  userRoutes
 );
 
-app.get(
- "/",
- (req,res)=>{
-
-  res.json({
-   message:
-   "PCOS API Running"
-  });
-
+app.get( "/", (req,res)=>{
+    res.json({
+    message:
+   "PCOS API Running"});
  }
 );
 

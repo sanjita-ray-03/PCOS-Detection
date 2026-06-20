@@ -27,7 +27,7 @@ function Navbar() {
                   <FaHeartbeat size={14} className="text-white" />
                 </div>
                 <div >
-                  <p className="text-xl font-semibold text-gray-900 leading-tight">PCOS Detection</p>
+                  <p className="text-xl font-semibold text-gray-900 leading-tight">FirstLook PCOS</p>
                   <p className="text-[13px] text-gray-400 mt-0.5">Health Monitor</p>
                 </div>
         </div>

@@ -6,8 +6,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 const { predictPCOS, getHistory } = require("../controllers/assessmentController");
 
-router.post(
- "/predict",
+router.post( "/predict",
  authMiddleware,
  predictPCOS
 );

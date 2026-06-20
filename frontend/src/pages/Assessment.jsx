@@ -57,7 +57,7 @@ function Assessment() {
             <FaHeartbeat size={14} className="text-white" />
           </div>
           <div>
-            <p className="text-[14px] font-semibold text-gray-900 leading-tight">PCOS Detection</p>
+            <p className="text-[14px] font-semibold text-gray-900 leading-tight">FirstLook PCOS</p>
             <p className="text-[11px] text-gray-400">Health Monitor</p>
           </div>
         </div>

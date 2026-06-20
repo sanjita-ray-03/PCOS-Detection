@@ -45,40 +45,36 @@ def test():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-
     try:
-
         data = request.json
-
         input_row = []
-
         for feature in features:
 
             input_row.append(
                 data.get(str(feature), 0)
             )
-
         df = pd.DataFrame([input_row])
-
+        
         scaled = scaler.transform(df.values)
-
+        
         prediction = model.predict(
             scaled
         )[0]
-
+        
         probability = model.predict_proba(
             scaled
         )[0][1]
-
+        
         if probability >= 0.80:
             risk = "High"
-
+            
         elif probability >= 0.50:
             risk = "Moderate"
-
+            
         else:
             risk = "Low"
-
+            
+            
         return jsonify({
 
             "prediction":
@@ -91,7 +87,6 @@ def predict():
             risk
 
         })
-
     except Exception as e:
 
         print("ERROR:", e)
@@ -99,6 +94,8 @@ def predict():
         return jsonify({
             "error": str(e)
         }), 500
+
+
 
 
 

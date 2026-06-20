@@ -138,7 +138,7 @@ function Signup() {
           mb-8
         "
         >
-          Join PCOS Detection
+          Join FirstLook PCOS
         </p>
 
         {error && (

@@ -59,7 +59,7 @@ function Sidebar() {
           <FaHeartbeat size={15} className="text-white" />
         </div>
         <div className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <p className="text-[13px] font-semibold text-gray-900 leading-tight">PCOS Detection</p>
+          <p className="text-[13px] font-semibold text-gray-900 leading-tight">FirstLook PCOS</p>
           <p className="text-[11px] text-gray-400 mt-0.5">Health Monitor</p>
         </div>
       </div>
